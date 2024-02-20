@@ -1,0 +1,68 @@
+<div class="container-fluid">
+
+  <h1 class="text-center">Posts</h1>
+  <div class="container">
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile *ngFor="let post of posts_list">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{ post.title }}</mat-panel-title>
+            <mat-panel-description>UserID: {{ post.userId }}</mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-card>
+            <mat-card-content>
+              <p>ID: {{ post.id }}</p>
+              <p>Description: {{ post.body }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button [routerLink]="['/comments']">View Comments</button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-expansion-panel>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <h1 class="text-center">Albums</h1>
+  <div class="container">
+    <mat-grid-list cols="3" rowHeight="2:1">
+      <mat-grid-tile *ngFor="let album of albums_list">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title [routerLink]="['/photos_matched_user/', album.id]">Title: {{ album.title }}</mat-panel-title>
+            <mat-panel-description>UserID: {{ album.userId }}</mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-card>
+            <mat-card-content>
+              <p>ID: {{ album.id }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button [routerLink]="['/photos_matched_user/',album.id]">View Comments</button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-expansion-panel>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <h1 class="text-center">Todos</h1>
+  <div class="container">
+    <mat-grid-list cols="3" rowHeight="2:1">
+      <mat-grid-tile *ngFor="let todo of todos_list">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>Title: {{ todo.title }}</mat-panel-title>
+            <mat-panel-description>UserID: {{ todo.userId }}</mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-card>
+            <mat-card-content>
+              <p>ID: {{ todo.id }}</p>
+              <p>Status: {{ todo.completed }}</p>
+            </mat-card-content>
+          </mat-card>
+        </mat-expansion-panel>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+</div>

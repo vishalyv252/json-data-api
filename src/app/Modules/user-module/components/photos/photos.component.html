@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="text-center">
+        <h1 class="h3">Albums {{ albumTitle ? ' - ' + albumTitle : '' }}</h1>
+      </div>
+      <div class="d-flex flex-wrap justify-content-center">
+        <div *ngFor="let photo of photos_list" class="card m-2" style="width: 18rem;">
+          <img src="{{photo.thumbnailUrl}}" class="card-img-top" alt="Thumbnail Images">
+          <div class="card-body text-center">
+            <h5 class="card-title">Title: {{photo.title}}</h5>
+            <p class="card-text">ID: {{photo.id}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

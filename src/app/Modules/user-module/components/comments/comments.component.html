@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="text-center">
+        <h1 class="h3">Posts {{ postTitle ? ' - ' + postTitle : '' }}</h1>
+        <h5>Comment Box</h5>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <div *ngFor="let comment of comments_list" class="mb-4">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-title normal"><span class="bold">Name : </span>{{comment.name}}</p>
+              <p class="card-text normal"><span class="bold">Post ID : </span>{{comment.postId}}</p>
+              <p class="card-text normal"><span class="bold">ID : </span>{{comment.id}}</p>
+              <p class="card-text normal"><span class="bold">Body : </span>{{comment.body}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
